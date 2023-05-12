@@ -59,7 +59,8 @@ header {
   outline: none !important;
   color: #2196f3;
   cursor: pointer;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* .black-link:visited {color: red;} */
 .contact {
@@ -77,7 +78,8 @@ header {
   outline: none !important;
   color: #2196f3;
   cursor: pointer;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-logo {
   color: #ffffff;
@@ -189,7 +191,7 @@ header {
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
   text-decoration: none;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 /* portfolio begin */
 .button-second {
@@ -210,7 +212,8 @@ header {
   cursor: pointer;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-portfolio {
   background-color: white;
@@ -291,7 +294,8 @@ header {
 .contact:focus {
   color: #2196f3;
   fill: #2196f3;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-lorem {
   border-radius: 4px;
@@ -315,7 +319,8 @@ header {
   outline: none !important;
   fill: #2196f3;
   border: solid 1px #2196f3;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-customers {
   display: flex;
@@ -348,7 +353,8 @@ header {
   fill: #ffffff;
   background: #2196f3;
   border-radius: 50%;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .end {
   margin-left: 70px;
@@ -356,11 +362,13 @@ header {
 .join-us {
   color: #eeeeee;
   padding-bottom: 20px;
+  /* padding-top: auto; */
   font-weight: 700;
   font-style: normal;
-  line-height: 16px;
+  /* line-height: 16px; */
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-top: 8px;
 }
 .end-icons {
   display: flex;
@@ -378,12 +386,20 @@ header {
   fill: #ffffff;
   background: #2196f3;
   border-radius: 50%;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.end-icons-footer {
+.end-icons {
+  display: flex;
+  justify-content: center;
+}
+.xxx {
+  display: flex;
+  flex-flow: column;
+}
+.yyy {
   display: flex;
   gap: 10px;
-  justify-content: center;
 }
 .logo-end {
   display: flex;
@@ -441,7 +457,8 @@ header {
 .card:hover .card-description {
   transform: translateY(0);
 }
-.link-agency::after {
+.link-agency::after,
+.link-agency:visited {
   content: "";
   display: block;
   position: absolute;
@@ -449,11 +466,10 @@ header {
   height: 4px;
   border-radius: 2px;
   top: 77.5px;
+  color: #2196f3;
   background-color: #2196f3;
 }
-.link-agency:visited {
-  color: #2196f3;
-}
+
 .modal {
   position: absolute;
   width: 528px;
@@ -464,8 +480,12 @@ header {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  transition: transform 250ms ease-in;
 }
+/* .is-hidden.modal {
+  transform: scale(0);
+} */
 .backdrop {
   position: fixed;
   left: 0px;
@@ -483,6 +503,10 @@ header {
   visibility: hidden;
   opacity: 0;
 }
+
+.is-hidden .modal {
+  transform: scale(0);
+}
 .close-btn {
   position: absolute;
   width: 30px;
@@ -495,4 +519,8 @@ header {
   color: #000000;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.close-btn:hover {
+  color: #ffffff;
+  background: #2196f3;
 }
